@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: book-catalog-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: book-catalog
+  template:
+    metadata:
+      labels:
+        app: book-catalog
+    spec:
+      containers:
+      - name: book-catalog
+        image: book-catalog:latest
+        ports:
+        - containerPort: 80
+      env:
+      - name: DATABASE_URL
+        value: "postgresql://sit722libdb_vg1u_user:8rTspEdnsECI1avnXfhPr3DYde1az4uC@dpg-cr8mg22j1k6c73f50klg-a.oregon-postgres.render.com/sit722libdb_vg1u"
+
