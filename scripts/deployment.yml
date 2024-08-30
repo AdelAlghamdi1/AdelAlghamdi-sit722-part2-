@@ -14,10 +14,12 @@ spec:
     spec:
       containers:
       - name: book-catalog
-        image: book-catalog:latest
+        image: adelalghamdi1/book-catalog:latest
+        imagePullPolicy: Always  # Ensures that Kubernetes always pulls the latest image
         ports:
         - containerPort: 80
-      env:
-      - name: DATABASE_URL
-        value: "postgresql://sit722libdb_vg1u_user:8rTspEdnsECI1avnXfhPr3DYde1az4uC@dpg-cr8mg22j1k6c73f50klg-a.oregon-postgres.render.com/sit722libdb_vg1u"
-
+        env:
+        - name: DATABASE_URL
+          value: "database url
+        - name: PYTHONWARNINGS
+          value: "ignore::UserWarning"
